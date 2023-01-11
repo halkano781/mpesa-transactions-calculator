@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="C:\Users\User\Desktop\halkano project\my website tools\mpesa transactions calculator\Web\icons8-circled-m-emoji-32.png">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Mpesa Transactions Calculator</title>
+  </head>
+  <body>
+    <div style="background-image: url('https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+    <h1>M-pesa Transaction(s) Calculator</h1>
+    <div id="form-container">
+      <form>
+        <label>Transaction Type:</label>
+        <select id="transaction-type">
+          <option value="send-to-mpesa">Send To Mpesa</option>
+          <option value="send-to-other-networks">Send To Other Networks</option>
+          <option value="send-to-unregistered">Send To Unregistered</option>
+          <option value="withdraw-at-agent">Withdraw at Agent</option>
+        </select>
+        <br>
+        <label>Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount in KES">
+        <br>
+        <label>Transaction Fee:</label>
+        <input type="text" id="transactionFee" disabled>
+        <br>
+        <button id="calculate-btn" type="button">Calculate</button>
+        <button id="reset-btn" type="reset">Reset</button>
+      </form>
+    </div>
+    <script>
+        const maximumAmount = 150000;
+const calculateBtn = document.getElementById("calculate-btn");
+calculateBtn.addEventListener("click", function(){
+    const transactionType = document.getElementById("transaction-type").value;
+    const amount = document.getElementById("amount").value;
+    let transactionFee = 0; // initialize to 0
+    if (amount === "") {
+        alert("Amount field is empty!");
+    } else if (amount > maximumAmount) {
+        alert("The maximum amount that can be transacted is KES " + maximumAmount);
+    
+            } else if (amount >= 1 && amount <= 49) {
+                transactionFee = 'None';
+            } else if (amount >= 50 && amount <= 100) {
+                switch (transactionType) {
+                    case 'withdraw-at-agent':
+                        transactionFee = 10;
+                        break;
+                    default:
+                        transactionFee = 'None';
+                }
+            } else if (amount >= 101 && amount <= 500) {
+                switch (transactionType) {
+                    case 'send-to-mpesa':
+                        transactionFee = 6;
+                        break;
+                    case 'send-to-other-networks':
+                        transactionFee = 6;
+                        break;
+                    case 'send-to-unregistered':
+                        transactionFee = 45;
+                        break;
+                    case 'withdraw-at-agent':
+                        transactionFee = 27;
+                        break;
+                }
+            } else if (amount >= 501 && amount <= 1000) {
+                switch (transactionType) {
+                    case 'send-to-mpesa':
+                        transactionFee = 12;
+                        break;
+                    case 'send-to-other-networks':
+                        transactionFee = 12;
+                        break;
+                    case 'send-to-unregistered':
+                        transactionFee = 49;
+                        break;
+                    case 'withdraw-at-agent':
+                        transactionFee = 28;
+                        break;
+                }
+        } else if (amount >= 1001 && amount <= 1500) {
+            switch (transactionType) {
+                case 'send-to-mpesa':
+                    transactionFee = 22;
+                    break;
+                case 'send-to-other-networks':
+                    transactionFee = 22;
+                    break;
+                case 'send-to-unregistered':
+                    transactionFee = 59;
+                    break;
+                case 'withdraw-at-agent':
+                    transactionFee = 28;
+                    break;
+            }
+        } else if (amount >= 1501 && amount <= 2500) {
+                switch (transactionType) {
+                    case 'send-to-mpesa':
+                        transactionFee = 32;
+                        break;
+                    case 'send-to-other-networks':
+                        transactionFee = 32;
+                        break;
+                    case 'send-to-unregistered':
+                        transactionFee = 74;
+                        break;
+                    case 'withdraw-at-agent':
+                        transactionFee = 28;
+                        break;
+                }
+        } else if (amount >= 2501 && amount <= 3500) {
+                switch (transactionType) {
+                    case 'send-to-mpesa':
+                        transactionFee = 51;
+                        break;
+                    case 'send-to-other-networks':
+                        transactionFee = 51;
+                        break;
+                    case 'send-to-unregistered':
+                        transactionFee = 112;
+                        break;
+                    case 'withdraw-at-agent':
+                        transactionFee = 50;
+                        break;
+                }
+        } else if (amount >= 3501 && amount <= 5000) {
+                switch (transactionType) {
+                    case 'send-to-mpesa':
+                        transactionFee = 55;
+                        break;
+                    case 'send-to-other-networks':
+                        transactionFee = 55;
+                        break;
+                    case 'send-to-unregistered':
+                        transactionFee = 135;
+                        break;
+                    case 'withdraw-at-agent':
+                        transactionFee = 67;
+                        break;
+                }
+        } else if (amount >= 5001 && amount <= 7500) {
+                switch (transactionType) {
+                    case 'send-to-mpesa':
+                        transactionFee = 75;
+                        break;
+                    case 'send-to-other-networks':
+                        transactionFee = 75;
+                        break;
+                    case 'send-to-unregistered':
+                        transactionFee = 166;
+                        break;
+                    case 'withdraw-at-agent':
+                        transactionFee = 84;
+                        break;
+                }
+        } else if (amount >= 10001 && amount <= 15000) {
+                switch (transactionType) {
+                    case 'send-to-mpesa':
+                        transactionFee = 97;
+                        break;
+                    case 'send-to-other-networks':
+                        transactionFee = 97;
+                        break;
+                    case 'send-to-unregistered':
+                        transactionFee = 265;
+                        break;
+                    case 'withdraw-at-agent':
+                        transactionFee = 162;
+                        break;
+                }
+        } else if (amount >= 15001 && amount <= 20000) {
+                switch (transactionType) {
+                    case 'send-to-mpesa':
+                        transactionFee = 102;
+                        break;
+                    case 'send-to-other-networks':
+                        transactionFee = 102;
+                        break;
+                    case 'send-to-unregistered':
+                        transactionFee = 288;
+                        break;
+                    case 'withdraw-at-agent':
+                        transactionFee = 180;
+                        break;
+                }
+        } else if (amount >= 20001 && amount <= 35000) {
+                switch (transactionType) {
+                    case 'send-to-mpesa':
+                        transactionFee = 105;
+                        break;
+                    case 'send-to-other-networks':
+                        transactionFee = 105;
+                        break;
+                    case 'send-to-unregistered':
+                        transactionFee = 309;
+                        break;
+                    case 'withdraw-at-agent':
+                        transactionFee = 191;
+                        break;
+                }
+        } else if (amount >= 35001 && amount <= 50000) {
+                switch (transactionType) {
+                    case 'send-to-mpesa':
+                        transactionFee = 105;
+                        break;
+                    case 'send-to-other-networks':
+                        transactionFee = 105;
+                        break;
+                    case 'send-to-unregistered':
+                        transactionFee = 'None';
+                        break;
+                    case 'withdraw-at-agent':
+                        transactionFee = 270;
+                        break;
+                }
+        } else if (amount >= 50001 && amount <= 150000) {
+                switch (transactionType) {
+                    case 'send-to-mpesa':
+                        transactionFee = 105;
+                        break;
+                    case 'send-to-other-networks':
+                        transactionFee = 105;
+                        break;
+                    case 'send-to-unregistered':
+                        transactionFee = 'None';
+                        break;
+                    case 'withdraw-at-agent':
+                        transactionFee = 300;
+                        break;
+                }        
+            // And so on for the other amount ranges and transaction types
+        }
+        //update the transactionFee input field
+        document.getElementById("transactionFee").value = transactionFee;
+    });
+
+    const resetBtn = document.getElementById("reset-btn");
+    resetBtn.addEventListener("click", function(){
+    document.getElementById("amount").value = "";
+    document.getElementById("transactionFee").value = "";
+    });
+
+</script>
+
+     
+  </body>
+</html>

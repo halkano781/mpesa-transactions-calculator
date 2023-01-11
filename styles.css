@@ -1,0 +1,103 @@
+/* styles.css */
+/* styles.css */
+@media screen and (max-width: 600px) {
+    form {
+        width: 90%; /* increase the width on smaller screens */
+    }
+}
+
+body {
+    background-image: linear-gradient(to right, #667eea, #764ba2);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+label {
+    font-weight: bold;
+    display:ruby-base; /* to make labels display as a block */
+    margin-right: 10px; /* add 10px of space below the labels */
+    
+}
+#form-container {
+    width: 40%; /* set the width of the container */
+    background-color: rgb(107, 139, 235);
+    margin:  auto; /* center the container horizontally */
+    border: 3px solid rgb(202, 167, 167); /* add a border around the container */
+    padding: 10px; /* add some padding inside the container */
+    display: flex; /* make the container a flex container */
+    flex-wrap: wrap;
+    align-items: flex-start; /* align the contents at the top of the container */
+    flex-direction: column;
+}
+#reset-btn {
+    padding: 9px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #97bbcf;
+    color: rgb(36, 33, 33);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 100px;
+    margin-bottom: 0;
+  }
+#calculate-btn {
+    padding: 9px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #97bcd1;
+    color: rgb(36, 33, 33);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 80px;
+  }
+  /* Add a hover effect to the buttons */
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+  #amount {
+      margin-top: 20px;
+    }
+input#amount {
+        position: relative; /*make the input field position relative to its parent*/
+        left: 70px; /*move the input field 20px to the right*/
+        border-style: inset;
+    }
+
+input#transactionFee {
+        position: relative; /*make the input field position relative to its parent*/
+        left: 4px; /*move the input field 20px to the right*/
+    }
+    
+    
+#transactionFee {
+    margin-top: 20px;
+}
+button {
+        margin-top: 20px; /* add some margin on the top of the button*/
+        width: 150px; /* set the width of the button */
+        margin-left: auto; /* align the button to center horizontally */
+        margin-right: auto;
+    }
+/* add style to the transaction type label  */
+label {
+    font-weight: bold;
+    margin-right: 90px;
+}
+
+/* center the m-pesa transaction at top of the table */
+h1 {
+    text-align: center; /* center the text */
+    margin-top: 20; /* remove the top margin */
+    margin-bottom: auto;
+}
+
+
