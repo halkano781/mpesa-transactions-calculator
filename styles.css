@@ -2,8 +2,14 @@
 /* styles.css */
 @media screen and (max-width: 600px) {
     #form-container {
-        width: 90%; /* increase the width on smaller screens */
+        width: 90%; /* increase the widt
+}
+@media screen and (min-width: 480px) {
+    div {
+        float: left;
+        background: red;
     }
+    .......
 }
 
 body {
