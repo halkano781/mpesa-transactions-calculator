@@ -1,7 +1,7 @@
 /* styles.css */
 /* styles.css */
 @media screen and (max-width: 600px) {
-    form {
+    #form-container {
         width: 90%; /* increase the width on smaller screens */
     }
 }
